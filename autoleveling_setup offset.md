@@ -9,7 +9,7 @@ Marlin verze 1.1 a správně zapojená a nakonfigurovaná sonda (indukční / IR
 ..* __Z-offset__ - vzdálenost mezi Trigger pointem a požadovanou pozicí trysky v bodě 0 na souřadnici Z. 
 
 # Postup
-##Pozice sondy
+## Pozice sondy
 Sonda musí být obecně instalována na tiskové hlavě tak, aby její fyzický okraj byl ideálně alespoň 1mm nad úrovní trysky. To nelze dodržet u sond, které mají reálně malý sensing distance. Příkladem budíž indukční sonda v kombinaci s hlíníkovou vyhřívanou podložkou. (její 4mm sensing distance se na hliníkové podložce mění na cca 1.2mm)
 
 Další předpoklad dobré funkčnosti levelingu je, aby "trigger point" byl alespoň 0.6mm pod úrovní trysky.  Například IR sonda má typicky 2.5mm sensing distance. Při umístění sondy 1.5mm nad úroveň trysky dostaneme bude trigger point cca 1mm pod úrovní trysky.
