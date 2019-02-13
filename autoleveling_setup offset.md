@@ -2,11 +2,11 @@
 Marlin verze 1.1 a správně zapojená a nakonfigurovaná sonda (indukční / IR / kapacitní)
 
 # Pojmy
-..* __Trigger point__ - pomyslný bod v souřadnici Z, ve kterém dojde k sepnutí sondy a ta pošle firmware signál (trigger)
+* __Trigger point__ - pomyslný bod v souřadnici Z, ve kterém dojde k sepnutí sondy a ta pošle firmware signál (trigger)
 
-..* __Sensing distance__ - vzdálenost mezi fyzickým okrajem sondy a podložkou, při které dochází k sepnutí sondy a nalezení Trigger pointu
+* __Sensing distance__ - vzdálenost mezi fyzickým okrajem sondy a podložkou, při které dochází k sepnutí sondy a nalezení Trigger pointu
 
-..* __Z-offset__ - vzdálenost mezi Trigger pointem a požadovanou pozicí trysky v bodě 0 na souřadnici Z. 
+* __Z-offset__ - vzdálenost mezi Trigger pointem a požadovanou pozicí trysky v bodě 0 na souřadnici Z. 
 
 # Postup
 ## Pozice sondy
@@ -25,9 +25,9 @@ Po instalaci sondy a ověření základní funkčnosti (sonda bliká a příkaz 
 
 ### Příprava
 
-Neprovádejte homing, připojte se na tiskárnu přes OctoPrint, následně vypněte softwarové endstopy příkazem "M211 S0". Teplotu trysky nastavte na 160 stupňů. Připravte si papír, kterým budete hlídat, zda drhne tryska o podložku
+Neprovádejte homing, připojte se na tiskárnu přes OctoPrint, následně vypněte SW endstopy příkazem "M211 S0". Teplotu trysky nastavte na 160 stupňů. Připravte si papír, kterým budete hlídat, zda drhne tryska o podložku
 
-__Pozor: od této chvíle musíte pečlivě hlídat jaký příkaz k pohybu vaší tiskárně zadáte. Firmware už pohyb jakkoli neomezuje, pokud budete hloupí, můžete tiskárnu vážně poškodit. __
+**Pozor: od této chvíle musíte pečlivě hlídat jaký příkaz k pohybu vaší tiskárně zadáte. Firmware už pohyb jakkoli neomezuje, pokud budete hloupí, můžete tiskárnu vážně poškodit.**
 
 ### Ověření zda je trigger point sondy pod úrovní trysky
 
@@ -39,7 +39,7 @@ Zaznamenejte si hodnotu, kterou vaše tiskárna v momentě sepnutí sondy ukazuj
 
 nyní pomalu klesejte tiskovou hlavou po desetinách milimetru po ose Z do doby, než začne drhnout papír který máte pod tryskou. Ta musí být stále zahřátá, jinak hrozí, že budete po papíru drhnout vyteklým plastem a nenaleznete správný bod. Nalezení správného bodu je otázkou cviku a zkušeností. Pokud si nejste jisti, je lepší jako bod Z0 určit bod, kdy papír drhne méně, než více. Předejdete případnému poškození tiskového povrchu a následně snadno zkompenzujete. Pro příklad jsme nalezli bod Z0 v pozici Z: -22.1). 
 
-Z-offset je tedy rozdíl mezi trigger pointem a bodem Z0:  -21.2 - (-22.1) = -0.9. Hodnota Z-offset je tedy Z-0.9 (G-code:  M851 Z-0.9). Hodnotu je možné zadat do tiskárny. Nezapomeňte uložit nastavení do EEPROM (příkaz M500).
+Z-offset je tedy rozdíl mezi trigger pointem a bodem Z0:  -21.2 - (-22.1) = -0.9. Hodnota Z-offset je tedy Z-0.9 (G-code:  M851 Z-0.9). Hodnotu je možné zadat do tiskárny. Nezapomeňte uložit nastavení do EEPROM (příkaz M500). Po uložení hodnot tiskárnu restartujte tlačítkem RESET (aby zapomněla pozice os a aby se obnovilo nastavení SW endstopů)
 
 Dále je vhodné ověřit, zda v bodě Z0 je okraj sondy fyzicky dostatečně vysoko nad podložkou. Pokud by sonda drhla o podložku nebo byla příliš nízko, nebylo by s ní možné tisknout, protože by zasahovala do vytisknutého objektu a brzo by se poškodila. 
 
